@@ -1,0 +1,17 @@
+#create base container  from node:alpine 
+FROM node:alpine
+
+#create core app directory
+WORKDIR '/app'
+
+#copy package.json file to install all dependencies
+COPY package.json .
+
+#run npm command to install all dependencies in container
+RUN npm install
+
+#copy all the contents from source to dest dir
+#COPY . .
+
+#run the command to start the node server
+CMD ["npm" , "run" , "start"]
