@@ -1,0 +1,10 @@
+sudo: required
+services: 
+  - docker
+
+before_install:
+  - docker build -t ajax/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run  ajax/docker-react npm run test -- --coverage
+  
