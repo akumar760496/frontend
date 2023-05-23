@@ -11,7 +11,7 @@ COPY package.json .
 RUN npm install
 
 #copy all the contents from source to dest dir
-#COPY . .
+COPY . .
 
 #run the command to start the node server
 CMD ["npm" , "run" , "start"]
